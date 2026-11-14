@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bata Shoes | Step into Style</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #1e293b;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #3b82f6;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 500;
+      transition: color 0.2s;
+      font-size: 16px;
+    }
+
+    .nav-links a:hover {
+      color: #3b82f6;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 20px;
+      font-size: 20px;
+      color: #334155;
+      cursor: default;
+    }
+
+    .nav-icons i {
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    .nav-icons i:hover {
+      color: #3b82f6;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-radius: 32px;
+      margin: 32px 0;
+      padding: 48px 56px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+
+    .hero-text h1 span {
+      color: #3b82f6;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #475569;
+      margin-bottom: 24px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: #3b82f6;
+      color: white;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 10px 20px -8px rgba(59, 130, 246, 0.5);
+    }
+
+    .btn-primary:hover {
+      background-color: #2563eb;
+    }
+
+    .btn-primary:active {
+      transform: scale(0.98);
+    }
+
+    .hero-image {
+      max-width: 380px;
+      width: 100%;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 24px;
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+    }
+
+    /* Categories Section */
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin: 48px 0 24px;
+    }
+
+    .section-title span {
+      color: #3b82f6;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      text-align: center;
+      padding: 12px 12px 20px;
+      border: 1px solid #eef2f6;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 32px -12px rgba(0, 0, 0, 0.1);
+      border-color: transparent;
+    }
+
+    .category-img {
+      width: 100%;
+      height: 180px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .category-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .category-card:hover .category-img img {
+      transform: scale(1.05);
+    }
+
+    .category-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #1e293b;
+    }
+
+    .category-card p {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    /* Featured Products */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 24px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #eef2f6;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 32px -12px rgba(0, 0, 0, 0.1);
+      border-color: transparent;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 180px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #f1f5f9;
+      margin-bottom: 14px;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #1e293b;
+    }
+
+    .product-category {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 18px;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #e2e8f0;
+      padding: 10px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+      color: #1e293b;
+      margin-top: auto;
+    }
+
+    .btn-outline:hover {
+      background: #3b82f6;
+      border-color: #3b82f6;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: white;
+      border-top: 1px solid #eef2f6;
+      padding: 40px 0 24px;
+      margin-top: 32px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .footer-brand h3 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand p {
+      color: #64748b;
+      max-width: 260px;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1e293b;
+    }
+
+    .footer-col a {
+      display: block;
+      text-decoration: none;
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #3b82f6;
+    }
+
+    .copyright {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 14px;
+      padding-top: 40px;
+      border-top: 1px solid #eef2f6;
+      margin-top: 32px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 32px 24px;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 24px;
+      }
+
+      .hero-text h1 {
+        font-size: 34px;
+      }
+
+      .hero-image {
+        max-width: 260px;
+      }
+
+      .section-title {
+        font-size: 26px;
+        margin-top: 32px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .footer-links {
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">Bata<span>Shoes</span></a>
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Women</a>
+          <a href="#">Kids</a>
+          <a href="#">Collections</a>
+          <a href="#">Sale</a>
+        </div>
+        <div class="nav-icons">
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-regular fa-user"></i>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Step into <span>Style</span> with Bata Shoes</h1>
+        <p>Premium comfort, modern design. Explore our latest collection for every step of your journey.</p>
+        <a href="#" class="btn-primary">Shop Now <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i></a>
+      </div>
+      <div class="hero-image">
+        <!-- High-quality hero shoe image (Unsplash) -->
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=80" alt="Stylish sneaker">
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <h2 class="section-title">Shop by <span>Category</span></h2>
+    <div class="category-grid">
+      <!-- Women's -->
+      <div class="category-card">
+        <div class="category-img">
+          <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&auto=format&fit=crop&q=80" alt="Women's footwear">
+        </div>
+        <h3>Women</h3>
+        <p>Heels, flats & more</p>
+      </div>
+      <!-- Men's -->
+      <div class="category-card">
+        <div class="category-img">
+          <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=400&auto=format&fit=crop&q=80" alt="Men's footwear">
+        </div>
+        <h3>Men</h3>
+        <p>Formal & casual</p>
+      </div>
+      <!-- Children's -->
+      <div class="category-card">
+        <div class="category-img">
+          <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=400&auto=format&fit=crop&q=80" alt="Children's footwear">
+        </div>
+        <h3>Children</h3>
+        <p>Fun & comfy</p>
+      </div>
+      <!-- Sports -->
+      <div class="category-card">
+        <div class="category-img">
+          <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&auto=format&fit=crop&q=80" alt="Sports shoes">
+        </div>
+        <h3>Sports</h3>
+        <p>Performance ready</p>
+      </div>
+    </div>
+
+    <!-- FEATURED PRODUCTS -->
+    <h2 class="section-title">Trending <span>Now</span></h2>
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&auto=format&fit=crop&q=80" alt="Running shoe">
+        </div>
+        <h3>AirStride Runner</h3>
+        <p class="product-category">Sports</p>
+        <p class="price">$89.99</p>
+        <button class="btn-outline">Add to Cart</button>
+      </div>
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=400&auto=format&fit=crop&q=80" alt="Women's heel">
+        </div>
+        <h3>Elegance Heel</h3>
+        <p class="product-category">Women</p>
+        <p class="price">$74.50</p>
+        <button class="btn-outline">Add to Cart</button>
+      </div>
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1512374382149-233c42b6a83b?w=400&auto=format&fit=crop&q=80" alt="Kids shoes">
+        </div>
+        <h3>Playful Kids</h3>
+        <p class="product-category">Children</p>
+        <p class="price">$39.99</p>
+        <button class="btn-outline">Add to Cart</button>
+      </div>
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=400&auto=format&fit=crop&q=80" alt="Casual sneaker">
+        </div>
+        <h3>Urban Casual</h3>
+        <p class="product-category">Men</p>
+        <p class="price">$64.99</p>
+        <button class="btn-outline">Add to Cart</button>
+      </div>
+      <!-- Product 5 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1580191947416-62d35a55e71d?w=400&auto=format&fit=crop&q=80" alt="Canvas shoes">
+        </div>
+        <h3>Canvas Classic</h3>
+        <p class="product-category">Unisex</p>
+        <p class="price">$49.99</p>
+        <button class="btn-outline">Add to Cart</button>
+      </div>
+      <!-- Product 6 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=400&auto=format&fit=crop&q=80" alt="Boots">
+        </div>
+        <h3>Trail Boots</h3>
+        <p class="product-category">Men</p>
+        <p class="price">$119.00</p>
+        <button class="btn-outline">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Bata<span style="color:#3b82f6;">Shoes</span></h3>
+          <p>Step into comfort and style. Quality footwear for the whole family.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <a href="#">Women</a>
+            <a href="#">Men</a>
+            <a href="#">Children</a>
+            <a href="#">Sports</a>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQs</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2025 BataShoes. All rights reserved. Designed with <i class="fa-solid fa-heart" style="color:#ef4444;"></i>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple JavaScript (interactivity) -->
+  <script>
+    (function() {
+      // Add to cart functionality (simple alert)
+      const cartButtons = document.querySelectorAll('.btn-outline');
+      cartButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const productCard = this.closest('.product-card');
+          const productName = productCard.querySelector('h3')?.innerText || 'Product';
+          alert(`✨ "${productName}" added to your cart!\n(Shop with Bata Shoes - demo)`);
+        });
+      });
+
+      // Category card click (just a friendly message)
+      const categoryCards = document.querySelectorAll('.category-card');
+      categoryCards.forEach(card => {
+        card.addEventListener('click', function() {
+          const categoryName = this.querySelector('h3')?.innerText || 'Category';
+          alert(`🔍 Browsing ${categoryName} collection. (Demo)`);
+        });
+      });
+
+      // Hero Shop Now button
+      const heroBtn = document.querySelector('.btn-primary');
+      if (heroBtn) {
+        heroBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          alert('🛍️ Welcome to Bata Shoes! Explore our latest collection.');
+        });
+      }
+
+      // Icons interactivity (heart, user, bag)
+      const heartIcon = document.querySelector('.fa-heart');
+      if (heartIcon) {
+        heartIcon.addEventListener('click', () => alert('❤️ Your wishlist is empty (demo)'));
+      }
+      const userIcon = document.querySelector('.fa-user');
+      if (userIcon) {
+        userIcon.addEventListener('click', () => alert('👤 Sign in to your account (demo)'));
+      }
+      const bagIcon = document.querySelector('.fa-bag-shopping');
+      if (bagIcon) {
+        bagIcon.addEventListener('click', () => alert('🛒 Your cart is empty (demo)'));
+      }
+    })();
+  </script>
+</body>
+</html>
